@@ -7,6 +7,7 @@ import altair as alt
 
 import ner
 import dependency_parse
+from graphviz import Digraph
 
 example = (
         "When Sebastian Thrun started working on self-driving cars at "
@@ -55,9 +56,17 @@ elif view == 'dependencies':
     doc = dependency_parse.DependencyParse(text)
     with tab2:
         st.markdown('### Dependency Graph')
-        html = doc.get_visual()
-        # Use the HTML as a raw string in unsafe_allow_html mode
-        st.write(html, unsafe_allow_html=True)
+        dot = Digraph()
+        for token in doc.get_doc():
+            # Add nodes
+            dot.node(name=token.text, label=token.text)
+
+            # Add edges
+            if token.dep_ != 'ROOT':
+                dot.edge(token.head.text, token.text, label=token.dep_)
+
+        st.graphviz_chart(dot.source)
+
     with tab1:
         tree = doc.get_tree()
         st.table(tree)

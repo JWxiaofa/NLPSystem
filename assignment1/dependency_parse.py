@@ -22,9 +22,8 @@ class DependencyParse:
 
         return res
 
-    def get_visual(self):
-        return displacy.render(self.doc, style="dep", page=True, minify=True)
-
+    def get_doc(self):
+        return self.doc
 
 if __name__ == '__main__':
     sentence = "Sebastian Thrun started working on self-driving cars at Google in 2007."

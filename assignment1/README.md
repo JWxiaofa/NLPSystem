@@ -2,6 +2,13 @@
 
 The code assumes Python version 3.8 or higher.
 
+### Required modules
+SpaCy,
+Flask,
+FastAPI,
+Streamlit,
+Graphviz
+
 
 ### FastAPI
 
@@ -59,3 +66,4 @@ To run:
 ```bash
 $ streamlit run app_streamlit.py
 ```
+The application can be accessed at http://localhost:8501/. 
