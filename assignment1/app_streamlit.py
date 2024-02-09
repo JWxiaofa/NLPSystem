@@ -62,8 +62,7 @@ elif view == 'dependencies':
             dot.node(name=token.text, label=token.text)
 
             # Add edges
-            if token.dep_ != 'ROOT':
-                dot.edge(token.head.text, token.text, label=token.dep_)
+            dot.edge(token.head.text, token.text, label=token.dep_)
 
         st.graphviz_chart(dot.source)
 
