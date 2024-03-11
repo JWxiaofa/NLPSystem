@@ -1,0 +1,13 @@
+*~
+*pyc
+.DS_Store
+.venv
+venv
+.idea
+.ipynb_checkpoints/
+web-services/flask/examples/images/client-server*.png
+databases/sqlite/*.sqlite
+databases/alchemy/instance
+assignments/a1/solution
+.db
+entities.db

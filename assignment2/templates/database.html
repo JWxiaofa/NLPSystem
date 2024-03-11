@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Entities and their Heads:</h1>
+    <table border=1>
+        <thead>
+            <tr>
+                <th>Entity</th>
+                <th>Count</th>
+                <th>Head</th>
+                <th>Dependency</th>
+                <th>Text</th>
+                <th>Head Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity, details in entities_with_heads.items() %}
+                {% for text, head_dep_count in details.heads %}
+                    <tr>
+                        <td>{{ entity }}</td>
+                        <td>{{ details.count }}</td>
+                        <td>{{ head_dep_count[0] }}</td> <!-- Head-->
+                        <td>{{ head_dep_count[1] }}</td> <!-- Dependency relation -->
+                        <td>{{ text }}
+                        <td>{{ head_dep_count[2] }}</td> <!-- Head count -->
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><button onclick="location.href='/';">Back to page</button></p>
+</body>
+</html>
