@@ -11,7 +11,7 @@ Flask_SQLAlchemy
 
 ### Flask server
 
-To run:
+Go to /assignment2 directory and then run:
 
 ```bash
 $ python app.py
